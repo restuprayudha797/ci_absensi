@@ -16,40 +16,6 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-    <style>
-        .background {
-            width: 100%;
-            height: 100vh;
-            background-image: linear-gradient(0deg,
-                    rgba(0, 0, 0, 0.7),
-                    rgba(0, 0, 0, 0.7)),
-                url("../../../assets/assets-frontend/img/background.jpg");
-            background-color: rgba(0, 0, 0, 0.35);
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-        }
-
-        #home {
-            width: 100%;
-            height: 100vh;
-            background-image: linear-gradient(0deg,
-                    rgba(0, 0, 0, 0.7),
-                    rgba(0, 0, 0, 0.7)),
-                url("../../../assets/assets-frontend/img/background.jpg");
-            background-color: rgba(0, 0, 0, 0.35);
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-        }
-    </style>
 </head>
 
 <body>
