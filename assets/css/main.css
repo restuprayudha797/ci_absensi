@@ -1,0 +1,70 @@
+.bacground img {
+
+
+    width: 100%;
+    height: 100vh;
+
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    filter: brightness(25%);
+    position: absolute;
+    z-index: 1; 
+}
+
+.main-content {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100vh;
+
+}
+
+.navbar a {
+
+    color: white;
+}
+
+.navbar a:hover {
+
+    color: yellow;
+
+}
+
+.card-info {
+    margin-top: 100px;
+}
+
+.form-info {
+
+    max-width: 600px;
+    padding: 15px;
+
+}
+
+.blockquote p {
+
+    color: rgba(255, 255, 255, 0.711);
+}
+
+.button-info button {
+
+    border-radius: 7rem;
+}
+
+.alert-info {
+
+    border-radius: 1rem;
+    max-width: 30rem;
+
+}
+
+.card-results {
+
+    
+
+}
