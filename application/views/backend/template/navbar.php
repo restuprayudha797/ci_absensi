@@ -3,9 +3,8 @@
     <div class="main_container">
       <div class="col-md-3 left_col">
         <div class="left_col scroll-view">
-          <div class="navbar nav_title" style="border: 0;">
-            <a href="<?= base_url('login'); ?>" class="site_title"><i class="fa fa-users"></i> <span>Muda
-                Graduate</span></a>
+          <div class="navbar nav_title mt-2" style="border: 0;">
+            <a href="<?= base_url('login'); ?>" class="site_title"><i class="fa fa-unlock-alt"> </i> <span class="ml-1">Admin</span></a>
           </div>
 
           <div class="clearfix"></div>
@@ -13,7 +12,7 @@
           <!-- menu profile quick info -->
           <div class="profile clearfix">
             <div class="profile_info">
-              <span>Selamat Datang,</span>
+              <span><i class="fa fa-user"> </i> <?= $user['name'] ?></span>
               <h2><?= $this->session->userdata('nama_user'); ?></h2>
             </div>
           </div>
@@ -27,17 +26,18 @@
               <!-- <h3>General</h3> -->
               <ul class="nav side-menu">
                 <li><a href="<?= base_url('admin'); ?>"><i class="fa fa-home"></i> Beranda</a></li>
+                <?php if ($user['role_id'] == 1 || $user['role_id'] == 2) : ?>
+                  <li><a><i class="fa fa-credit-card"></i> Master Data <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="<?= base_url('kelas') ?>">Kelas</a></li>
+                      <li><a href="<?= base_url('siswa') ?>">Scan kartu</a></li>
+                      <li><a href="<?= base_url('siswa') ?>">Scan kartu</a></li>
 
-                <li><a><i class="fa fa-credit-card"></i> RFID <span class="fa fa-chevron-down"></span></a>
-                  <ul class="nav child_menu">
-                    <li><a href="<?= base_url('kelas') ?>">Kelas</a></li>
-                    <li><a href="<?= base_url('siswa') ?>">Scan kartu</a></li>
-                    <li><a href="<?= base_url('siswa') ?>">Scan kartu</a></li>
-                     
-                  </ul>
-                </li>
+                    </ul>
+                  </li>
+                <?php endif ?>
 
-               
+
 
               </ul>
             </div>
@@ -82,7 +82,7 @@
                 <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
                   <a class="dropdown-item" href="<?= base_url('auth/logout'); ?>"><i class="fa fa-sign-out pull-right"></i> Log Out</a>
                   <button type="button" class="dropdown-item" data-toggle="modal" data-target="#exampleModal">
-                  <i class="fa fa-unlock-alt pull-right" data-toggle="modal" data-target="#exampleModal"></i>Change Password
+                    <i class="fa fa-unlock-alt pull-right" data-toggle="modal" data-target="#exampleModal"></i>Change Password
                   </button>
                 </div>
               </li>
