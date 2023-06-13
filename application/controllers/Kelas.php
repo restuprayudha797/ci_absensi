@@ -23,6 +23,23 @@ class Kelas extends CI_Controller
 
   public function delete($id)
   {
+    // cek database siswa
+
+    $siswa = $this->db->get_where('siswa', ['id_kelas' => $id])->row_array();
+
+    if ($siswa) {
+      $this->session->set_flashdata('kelas_message', ' <div class="alert alert-danger" id="notification" role="alert">
+       Data Kelas Tidak Boleh Dihapus!
+       </div>');
+      redirect('kelas');
+    } else {
+
+      $this->db->delete('kelas', ['id_kelas' => $id]);
+      $this->session->set_flashdata('kelas_message', ' <div class="alert alert-success" id="notification" role="alert">
+      Data Kelas Berhasil Dihapus!
+      </div>');
+      redirect('kelas');
+    }
   }
 
   public function update($id)
@@ -30,14 +47,5 @@ class Kelas extends CI_Controller
     // cek database siswa
 
     $siswa = $this->db->get_where('siswa', ['id_kelas' => $id])->row_array();
-
-    if ($siswa) {
-      $this->session->set_flashdata('kelas_message', ' <div class="alert alert-success" id="notification" role="alert">
-      Data Jurusan Berhasil Ditambah!
-      </div>');
-      redirect('kelas');
-    } else {
-      echo 2;
-    }
   }
 }

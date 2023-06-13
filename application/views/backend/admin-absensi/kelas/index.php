@@ -16,6 +16,7 @@
            <li class="breadcrumb-item active" aria-current="page"><?= $title ?></li>
           </ol>
          </nav>
+         <?= $this->session->flashdata('kelas_message'); ?>
          <div class="clearfix"></div>
          <div class="row">
           <div class="col-md-12 col-sm-12 ">
@@ -62,8 +63,8 @@
                     <td><?= $row['nama_kelas'] ?></td>
                     <td>
                      <a href="<?= base_url('kelas/delete/') . $row['id_kelas'] ?>" onclick="return confirm('Apakah Anda Yakin Ingin Menghapus kelas <?= $row['nama_kelas'] ?> ?')" class="btn btn-sm btn-danger"><i class="fa fa-trash-o"></i></a>
-                     <a href="<?= base_url('kelas/delete/') . $row['id_kelas'] ?>" class="btn btn-sm btn-primary"><i class="fa fa-edit"></i></a>
-                     
+                     <a href="<?= base_url('kelas/update/') . $row['id_kelas'] ?>"+ class="btn btn-sm btn-primary"><i class="fa fa-edit"></i></a>
+
                     </td>
                    </tr>
                    <?php $i++ ?>
@@ -116,42 +117,3 @@
          </div>
         </div>
         <!-- end Modal -->
-
-        <?php foreach ($dataJurusan as $row) : ?>
-         <!-- Update Modal -->
-         <div class="modal fade" id="update<?= $row['id_jurusan'] ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog">
-           <div class="modal-content">
-            <div class="modal-header">
-             <h5 class="modal-title" id="exampleModalLabel">Update Data Jurusan <?= $row['id_jurusan'] ?></h5>
-             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-             </button>
-            </div>
-            <form action="<?= base_url('siswa/updateJurusan/') . $row['id_jurusan'] ?>" method="post">
-
-             <div class="modal-body">
-              <div class="form-group">
-               <label for="nama_jurusan">Nama Jurusan</label>
-               <input type="text" class="form-control" id="nama_jurusan" name="nama_jurusan" value="<?= $row['nama_jurusan'] ?>" placeholder="Masukkan Nama Jurusan">
-               <?= form_error('nama_jurusan', '<small class="text-danger">', '</small>'); ?>
-
-              </div>
-              <div class="form-group">
-               <label for="jurusan">Singkatan Jurusan</label>
-               <input type="text" class="form-control" id="jurusan" name="jurusan" value="<?= $row['jurusan'] ?>" placeholder="Masukkan Singkatan Jurusan">
-               <?= form_error('jurusan', '<small class="text-danger">', '</small>'); ?>
-
-              </div>
-             </div>
-             <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Kembali</button>
-              <button type="submit" class="btn btn-primary">Simpan</button>
-             </div>
-            </form>
-           </div>
-
-          </div>
-         </div>
-         <!-- end Update Modal -->
-        <?php endforeach ?>
