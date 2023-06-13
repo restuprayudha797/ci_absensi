@@ -28,12 +28,13 @@ class Kelas extends CI_Controller
     $siswa = $this->db->get_where('siswa', ['id_kelas' => $id])->row_array();
 
     if ($siswa) {
+      // jika siswa ada maka data kelas tidak boleh dihapus
       $this->session->set_flashdata('kelas_message', ' <div class="alert alert-danger" id="notification" role="alert">
        Data Kelas Tidak Boleh Dihapus!
        </div>');
       redirect('kelas');
     } else {
-
+      // jika siswa tidak ada data kelas boleh di hapus
       $this->db->delete('kelas', ['id_kelas' => $id]);
       $this->session->set_flashdata('kelas_message', ' <div class="alert alert-success" id="notification" role="alert">
       Data Kelas Berhasil Dihapus!
