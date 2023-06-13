@@ -20,4 +20,10 @@ class Kelas extends CI_Controller
     $this->load->view('backend/admin-absensi/kelas/index');
     $this->load->view('backend/template/footer');
   }
+
+  public function hapusKelas($id)
+  {
+    $this->km->hapusDataKelas($id);
+    redirect('kelas');
+  }
 }

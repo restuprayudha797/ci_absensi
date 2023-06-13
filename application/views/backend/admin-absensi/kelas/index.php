@@ -61,7 +61,7 @@
                                 <td><?= $row['singkatan_jurusan'] ?></td>
                                 <td><?= $row['nama_kelas'] ?></td>
                                 <td>
-                                  <a href="<?= base_url('siswa/hapusSiswa/') . $row['id_kelas'] ?>" onclick="return confirm('Apakah Anda Yakin Ingin Menghapus kelas <?= $row['nama_kelas'] ?> ?')" class="btn btn-sm btn-danger"><i class="fa fa-trash-o"></i></a>
+                                  <a href="<?= base_url('kelas/hapusKelas/') . $row['id_kelas'] ?>" onclick="return confirm('Apakah Anda Yakin Ingin Menghapus kelas <?= $row['nama_kelas'] ?> ?')" class="btn btn-sm btn-danger"><i class="fa fa-trash-o"></i></a>
                                   <button type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#update<?= $row['id_kelas'] ?>">
                                     <i class="fa fa-edit"></i>
                                   </button>
