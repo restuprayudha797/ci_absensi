@@ -20,4 +20,24 @@ class Kelas extends CI_Controller
     $this->load->view('backend/admin-absensi/kelas/index');
     $this->load->view('backend/template/footer');
   }
+
+  public function delete($id)
+  {
+  }
+
+  public function update($id)
+  {
+    // cek database siswa
+
+    $siswa = $this->db->get_where('siswa', ['id_kelas' => $id])->row_array();
+
+    if ($siswa) {
+      $this->session->set_flashdata('kelas_message', ' <div class="alert alert-success" id="notification" role="alert">
+      Data Jurusan Berhasil Ditambah!
+      </div>');
+      redirect('kelas');
+    } else {
+      echo 2;
+    }
+  }
 }
