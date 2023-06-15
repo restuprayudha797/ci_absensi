@@ -25,17 +25,19 @@
             <div class="menu_section">
               <!-- <h3>General</h3> -->
               <ul class="nav side-menu">
-                <li><a href="<?= base_url('admin'); ?>"><i class="fa fa-home"></i> Beranda</a></li>
+                <li><a href="<?= base_url('admin'); ?>"><i class="fa fa-home"></i>Beranda</a></li>
                 <?php if ($user['role_id'] == 1 || $user['role_id'] == 2) : ?>
                   <li><a><i class="fa fa-credit-card"></i> Master Data <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="<?= base_url('kelas') ?>">Kelas</a></li>
-                      <li><a href="<?= base_url('siswa') ?>">Scan kartu</a></li>
-                      <li><a href="<?= base_url('siswa') ?>">Scan kartu</a></li>
+                      <li><a href="<?= base_url('read tag.php') ?>">Scan kartu</a></li>
+                      <li><a href="<?= base_url('registration.php') ?>">Register kartu</a></li>
 
                     </ul>
                   </li>
                 <?php endif ?>
+                <li><a href="<?= base_url('siswa'); ?>"><i class="fa fa-users"></i>Siswa</a></li>
+
 
 
 
