@@ -37,4 +37,17 @@ class Siswa extends CI_Controller
             $this->load->view('backend/template/footer');
         }
     }
+
+    public function update($id)
+    {
+        $data['title'] = 'update data siswa';
+        $data['siswa'] = $this->sm->getSiswaById($id);
+
+        $this->load->view('backend/admin-absensi/siswa/update-siswa', $data);
+    }
+
+
+    public function delete($id)
+    {
+    }
 }
