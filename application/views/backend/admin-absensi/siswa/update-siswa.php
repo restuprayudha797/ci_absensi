@@ -27,8 +27,9 @@
 
 <body class="p-4">
     <div class="container bdr mt-3 p-5 " style="background-color: white;">
+    <?= validation_errors(); ?>
 
-        <form class="row g-3">
+        <form class="row g-3" method="post" action="<?= base_url('siswa/update/' . $siswa['nisn']) ?>">
             <div class="col-md-6">
                 <label for="nisn" class="form-label">NISN</label>
                 <input type="number" class="form-control" id="nisn" value="<?= $siswa['nisn'] ?>" readonly>
@@ -44,6 +45,10 @@
             <div class="col-12">
                 <label for="tetala" class="form-label">Tempat, Tgl Lahir</label>
                 <input type="text" class="form-control" id="tetala" name="tetala" placeholder="Masukkan tempat tetala" value="<?= $siswa['tetala'] ?>">
+            </div>
+            <div class="col-12">
+                <label for="no_telp_wali_murid" class="form-label">No Tlp Orang Tua</label>
+                <input type="text" class="form-control" id="no_telp_wali_murid" name="no_telp_wali_murid" placeholder="Masukkan tempat tetala" value="<?= $siswa['no_telp_wali_murid'] ?>">
             </div>
             <fieldset class="row mb-3 mt-4">
                 <div class="col-sm-10">

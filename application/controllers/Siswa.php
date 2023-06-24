@@ -44,7 +44,23 @@ class Siswa extends CI_Controller
         $data['kelas'] = $this->km->getAllKelas();
 
 
-        $this->load->view('backend/admin-absensi/siswa/update-siswa', $data);
+        $this->form_validation->set_rules('nama', 'Nama', 'required');
+        $this->form_validation->set_rules('kelas', 'Kelas', 'required');
+        $this->form_validation->set_rules('tetala', 'Tetala', 'required');
+        $this->form_validation->set_rules('jenis_kelamin', 'Jenis Kelamin', 'required');
+        $this->form_validation->set_rules('alamat', 'alamat', 'required');
+        $this->form_validation->set_rules('agama', 'Agama', 'required');
+        $this->form_validation->set_rules('golongan_darah', 'Golongan Darah', 'required');
+        $this->form_validation->set_rules('no_telp_wali_murid', 'no tlp wali murid', 'required');
+
+
+        if ($this->form_validation->run() == false) {
+
+            $this->load->view('backend/admin-absensi/siswa/update-siswa', $data);
+        } else {
+
+            $this->sm->update($id);
+        }
     }
 
 

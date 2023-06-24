@@ -3,7 +3,7 @@
         <?php
         if (validation_errors()) {
 
-          $this->session->set_flashdata('kelas_message', ' <div class="alert alert-danger" id="notification" role="alert">
+          $this->session->set_flashdata('siswa_message  ', ' <div class="alert alert-danger" id="notification" role="alert">
             Data Yang Anda Masukkan Tidak Lengkap Mohon Periksa Kembali!
             </div>');
         }
@@ -16,7 +16,7 @@
               <li class="breadcrumb-item active" aria-current="page"><?= $title ?></li>
             </ol>
           </nav>
-          <?= $this->session->flashdata('kelas_message'); ?>
+          <?= $this->session->flashdata('siswa_message'); ?>
           <div class="clearfix"></div>
           <div class="row">
             <div class="col-md-12 col-sm-12 ">
