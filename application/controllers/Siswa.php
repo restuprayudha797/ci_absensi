@@ -23,7 +23,6 @@ class Siswa extends CI_Controller
 
         $data['title'] = 'Data Siswa';
         $data['user'] = $this->db->get_where('users', ['id_user' => $this->session->userdata('id_user')])->row_array();
-        $data['kelas'] = $this->km->getAllKelas();
         $data['siswa'] = $this->sm->getAllSiswa();
 
         $this->form_validation->set_rules('kelas', 'Kelas', 'required');
@@ -42,6 +41,8 @@ class Siswa extends CI_Controller
     {
         $data['title'] = 'update data siswa';
         $data['siswa'] = $this->sm->getSiswaById($id);
+        $data['kelas'] = $this->km->getAllKelas();
+
 
         $this->load->view('backend/admin-absensi/siswa/update-siswa', $data);
     }

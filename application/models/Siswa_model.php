@@ -12,6 +12,7 @@ class Siswa_model extends CI_Model
     public function getSiswaById($id)
     {
 
-        return $this->db->get_where('siswa' . ['nisn' => $id])->row_array();
+        return $this->db->query("SELECT * FROM siswa, kelas WHERE siswa.id_kelas = kelas.id_kelas AND nisn = '$id'")->row_array();
+
     }
 }

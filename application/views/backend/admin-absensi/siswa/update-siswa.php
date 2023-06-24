@@ -28,36 +28,84 @@
 <body class="p-4">
     <div class="container bdr mt-3 p-5 " style="background-color: white;">
 
-        <form action="<?= base_url('kelas/update/' . $siswa['id_kelas']) ?>" method="post">
-            <div class="content ">
-                <div class="mb-3">
-                    <label for="kelas" class="form-label">Kelas</label>
-                    <input type="number" class="form-control" name="kelas" id="kelas" placeholder="Masukkan Kelas" min="10" max="12" value="<?= $siswa['kelas'] ?>" required>
-                </div>
+        <form class="row g-3">
+            <div class="col-md-6">
+                <label for="nisn" class="form-label">NISN</label>
+                <input type="number" class="form-control" id="nisn" value="<?= $siswa['nisn'] ?>" readonly>
             </div>
-            <div class="content ">
-                <div class="mb-3">
-                    <label for="nama_jurusan" class="form-label">Nama Jurusan</label>
-                    <input type="text" class="form-control" name="nama_jurusan" id="nama_jurusan" placeholder="Masukkan Nama Jurusan" value="<?= $siswa['nama_jurusan'] ?>" required>
-                </div>
+            <div class="col-md-6">
+                <label for="nis" class="form-label">NIS</label>
+                <input type="number" class="form-control" id="nis" value="<?= $siswa['nis'] ?>" readonly>
             </div>
-            <div class="content ">
-                <div class="mb-3">
-                    <label for="singkatan_jurusan" class="form-label">Singkatan Jurusan</label>
-                    <input type="text" class="form-control" name="singkatan_jurusan" id="singkatan_jurusan" placeholder="Masukkan Singkatan Jurusan" value="<?= $siswa['singkatan_jurusan'] ?>" required>
-                </div>
+            <div class="col-12">
+                <label for="nama" class="form-label">Nama</label>
+                <input type="text" class="form-control" id="nama" name="nama" placeholder="Masukkan Nama Siswa" value="<?= $siswa['nama'] ?>">
             </div>
-            <div class="content ">
-                <div class="mb-3">
-                    <label for="nama_kelas" class="form-label">Nama Kelas</label>
-                    <input type="text" class="form-control" name="nama_kelas" id="nama_kelas" placeholder="Masukkan Nama Kelas" value="<?= $siswa['nama_kelas'] ?>" required>
-                </div>
+            <div class="col-12">
+                <label for="tetala" class="form-label">Tempat, Tgl Lahir</label>
+                <input type="text" class="form-control" id="tetala" name="tetala" placeholder="Masukkan tempat tetala" value="<?= $siswa['tetala'] ?>">
             </div>
-            <div class="content ">
-                <div class="mb-3">
-                    <button type="submit" onclick="confirmCheck('Apakan anda yakin ingin menghapus perubahan ini?')" class="btn btn-danger">Kembali</button>
-                    <button type="submit" onclick="confirm('Yakin Ingin Menyimpan Perubahan ?')" class="btn btn-primary">Simpan</button>
+            <fieldset class="row mb-3 mt-4">
+                <div class="col-sm-10">
+                    <?php if ($siswa['jenis_kelamin'] == 1) : ?>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="jenis_kelamin" id="jenis_kelamin" value="1" checked>
+                            <label class="form-check-label" for="jenis_kelamin">
+                                Laki-Laki
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="jenis_kelamin" id="jenis_kelamin" value="2">
+                            <label class="form-check-label" for="jenis_kelamin">
+                                Perempuan
+                            </label>
+                        </div>
+                    <?php else : ?>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="jenis_kelamin" id="jenis_kelamin" value="1">
+                            <label class="form-check-label" for="jenis_kelamin">
+                                Laki-Laki
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="jenis_kelamin" id="jenis_kelamin" value="2" checked>
+                            <label class="form-check-label" for="jenis_kelamin">
+                                Perempuan
+                            </label>
+                        </div>
+
+                    <?php endif ?>
+
                 </div>
+            </fieldset>
+            <div class="col-md-6">
+                <label for="alamat" class="form-label">Alamat</label>
+                <input type="text" class="form-control" id="alamat" name="alamat" value="<?= $siswa['alamat'] ?>">
+            </div>
+            <div class="col-md-6">
+                <label for="kelas" class="form-label">Kelas</label>
+                <select id="kelas" class="form-select" name="kelas">
+                    <option value="<?= $siswa['id_kelas'] ?>"><?= $siswa['nama_kelas'] ?></option>
+
+                    <?php foreach ($kelas as $row) : ?>
+                        <option value="<?= $row['id_kelas'] ?>"><?= $row['nama_kelas'] ?></option>
+                    <?php endforeach ?>
+                    <option value=""> ==== Pilih Kelas ====</option>
+                </select>
+            </div>
+            <div class="col-md-2">
+                <label for="agama" class="form-label">Agama</label>
+                <input type="text" class="form-control" id="agama" name="agama" value="<?= $siswa['agama'] ?>">
+            </div>
+            <div class="col-md-2">
+                <label for="golongan_darah" class="form-label">Golongan Darah</label>
+                <input type="text" class="form-control" id="golongan_darah" name="golongan_darah" value="<?= $siswa['golongan_darah'] ?>">
+            </div>
+           
+            <div class="col-12">
+                <button type="submit" class="btn btn-danger" onclick="confirmCheck('apakah anda yakin untuk menghapus Perubahan?')">kembali</button>
+                <button type="submit" class="btn btn-primary">Simpan</button>
             </div>
         </form>
     </div>
