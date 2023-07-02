@@ -49,8 +49,7 @@
                 memastikan pencatatan kehadiran yang tepat waktu dan akurat.
             </p>
             <div class="button-content">
-                <a href="" class="button"><span class="material-symbols-outlined"> person </span> Wali
-                    Kelas</a>
+                <a href="<?= base_url('izin') ?>" class="button"><span class="material-symbols-outlined"> person </span> Perizinan</a>
                 <a href="" class="button"><span class="material-symbols-outlined"> group </span> Wali
                     Murid</a>
             </div>

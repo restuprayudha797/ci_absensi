@@ -51,7 +51,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 $route = array(
     'login' => 'auth',
-    'beranda' => 'home'
+    'beranda' => 'home',
+    'izin' => 'home/perizinan'
   );
 
 $route['default_controller'] = 'home';
