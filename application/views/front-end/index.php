@@ -210,16 +210,6 @@
                         <a href=""><i class="fa-solid fa-envelope"></i></a>
                     </div>
                 </div>
-
-                <div class="dev-data mid">
-                    <img class="image" src="<?= base_url('assets/assets-frontend/img') ?>/user-3.jpeg" alt="User Image" />
-                    <p class="dev-name">Metika Putri</p>
-                    <p class="dev-work">Administrasi</p>
-                    <div class="dev-deks">
-                        <a href=""><i class="fa-brands fa-instagram"></i></a>
-                        <a href=""><i class="fa-solid fa-envelope"></i></a>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
